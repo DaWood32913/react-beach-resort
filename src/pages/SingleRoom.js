@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 export default class SingleRoom extends
 Component {
@@ -7,6 +7,7 @@ Component {
             <div>
                 Hello SingleRoom
             </div>
-        )
+        ); 
+            
     }
 }

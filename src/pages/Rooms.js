@@ -3,6 +3,7 @@ import React from 'react';
 const Rooms = () => {
     return <div>
              Hello Rooms
-           </div>
+           </div>;
+};
 
-}
+export default Rooms;

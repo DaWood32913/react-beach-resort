@@ -5,5 +5,5 @@ export default function Error() {
         <div>
             Hello Error
         </div>
-    )
+    );
 }
