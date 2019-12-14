@@ -10,7 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
      <>
-     <Route path="/" component={Home} />
+     <Route exact path="/" component={Home} />
      <Route path="/rooms" component={Rooms} />
      <Route path="/single-room" component={SingleRoom} />
 
