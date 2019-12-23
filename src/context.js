@@ -27,8 +27,8 @@ class RoomProvider extends Component {
     // this.getData
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(room => room.featured === true);
-    let maxPrice = Math.max(...rooms.ap(item => item.price));
-    let maxSize = Math.max(...rooms.ap(item => item.size));
+    let maxPrice = Math.max(...rooms.map(item => item.price));
+    let maxSize = Math.max(...rooms.map(item => item.size));
     this.setState({
       rooms,
       featuredRooms,
@@ -82,9 +82,20 @@ class RoomProvider extends Component {
       maxPrice
     } = this.state;
 
+    //all the rooms
     let tempRooms = [...rooms];
+
+    //transform value
+    capacity = parseInt(capacity)
+
+    //filter by type
     if (type !== "all") {
       tempRooms = tempRooms.filter(room => room.type === type);
+    }
+
+    //filter by capacity
+    if(capacity !==1) {
+      tempRooms = tempRooms.filter(room => room.capacity >= capacity)
     }
     this.setState({
       sortedRooms: tempRooms
